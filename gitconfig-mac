@@ -1,0 +1,31 @@
+[user]
+	name = tolerious
+	email = tolerious@seedlinktech.com
+[core]
+	editor = vim
+[color]
+	ui = true
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	st = status
+	br = branch
+	co = checkout
+	ck = checkout
+[diff]
+  tool = bcomp
+[difftool]
+  prompt = true 
+[difftool "bcomp"]
+  trustExitCode = true
+  cmd = "/usr/local/bin/bcomp" \"$LOCAL\" \"$REMOTE\"
+[merge]
+  tool = bcomp
+[mergetool]
+  prompt = true 
+[mergetool "bcomp"]
+  trustExitCode = true
+  cmd = "/usr/local/bin/bcomp" \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
